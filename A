@@ -1,0 +1,55 @@
+import java.util.*;
+import java.lang.*;
+class Homework {
+	public static void main(String[]args){
+		System.out.println("助教大人想查哪一题咧？");
+		System.out.println("请输入题号~（输入1~4的数字）");	
+		while(1==1){
+			Homework c=new Homework();
+			int numbers=c.getNumber();	
+		Summary sum=new Summary();
+		switch(numbers){
+		case 1:
+			sum.Add(2);
+			break;
+		case 2:
+			sum.Add(100);
+			break;
+		case 3:
+			sum.Square(100);
+			break;
+		case 4:
+			System.out.println("请输入一个数字来当作n：");
+						int n=c.getNumber();
+			sum.Square(n);
+			break;
+		default:
+			System.out.println("您输入的不是1~4哦！只能检查1、2、3、4题QAQ");
+			break;
+		}
+		}
+	}
+	public int getNumber(){
+		Scanner figure=new Scanner(System.in);
+        int number=figure.nextInt();
+		return number;
+	}
+}
+class Summary {
+	int times=0;
+	int summary=0;
+public void Add(int numbers){
+		while(times<=numbers){
+			summary=summary+times;
+			times++;
+		}
+		System.out.println("他们的和是"+summary);
+}
+public void Square(int numbers){
+	while(times<=numbers){
+		summary=summary+times*times;
+		times++;
+	}
+	System.out.println("他们的平方和是"+summary);
+}
+}
